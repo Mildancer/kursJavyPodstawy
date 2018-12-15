@@ -1,4 +1,4 @@
-package _2_typy;
+package _2_typy_danych;
 
 import java.util.Scanner;
 
