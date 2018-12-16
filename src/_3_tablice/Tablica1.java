@@ -48,6 +48,20 @@ public class Tablica1 {
             System.out.println(tablicaWypelniona[i]);
 
         }
+
+        //wyswietlanie co 2 elementu
+
+        System.out.println("Tabli co 2gi element");
+
+        for (int i = 0; i < tablicaWypelniona.length; i = i + 2)
+        {
+            System.out.println(tablicaWypelniona[i]);
+
+        }
+
+
+
+
     }
 }
 
