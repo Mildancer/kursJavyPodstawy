@@ -48,7 +48,7 @@ public class WiekProdukcyjny {
 
             if (roznica.getYears() < 18) {
                 System.out.println("Niepelnoletni");
-            } else if (roznica.getYears() >= 18 && roznica.getYears() <= 67) {
+            } else if (roznica.getYears() > 18 && roznica.getYears() <= 67) {
                 System.out.println("Wiek produkcyjny");
             } else {
                 System.out.println("Wiek emerytalny");
@@ -61,7 +61,7 @@ public class WiekProdukcyjny {
         else {
             if (roznica.getYears() < 18) {
                 System.out.println("Niepelnoletni");
-            } else if (roznica.getYears() >= 18 && roznica.getYears() <= 65) {
+            } else if (roznica.getYears() > 18 && roznica.getYears() <= 65) {
                 System.out.println("Wiek produkcyjny");
             } else {
                 System.out.println("Wiek emerytalny");
