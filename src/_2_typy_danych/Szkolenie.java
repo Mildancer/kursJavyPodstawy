@@ -1,9 +1,11 @@
 package _2_typy_danych;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class Szkolenie {
-    double cena;
+    BigDecimal cena;
     int liczbaUczestnikow;
     String nazwa;
     LocalDate data;
@@ -18,7 +20,7 @@ public class Szkolenie {
 
     //kontruktor parametryczny -
 
-    public Szkolenie(String nazwa, int liczbaUczestnikow, double cena, LocalDate data){
+    public Szkolenie(String nazwa, int liczbaUczestnikow, BigDecimal cena, LocalDate data){
         System.out.println("Wykonal sie konstruktor parametryczny");  // dziala przy wywolaniu nowego obiektu
         this.nazwa = nazwa; // konstruktor przypisuje swoja  do nazwy w fukcji -- wiadomo,ze nazwa odwoluje sie do nazwy  z kontruktora (pierwsza nazwa to nazwa funckji, druga konstruktora
         this.liczbaUczestnikow = liczbaUczestnikow;
@@ -42,7 +44,36 @@ public class Szkolenie {
         System.out.println("liczbaUczestnikow: " +this.liczbaUczestnikow);
         System.out.println("data: " +this.data);
         System.out.println();
+        System.out.println("Przychod brutto: " +this.obliczPrzychodBrutto());
+       System.out.println("Przychod netto: " +this.obliczPrzychodNetto());
     }
+
+
+    public  BigDecimal obliczPrzychodBrutto()
+    {
+       /* double przychod = this.liczbaUczestnikow * this.cena;
+        return  przychod;
+        */
+
+      //wczesniej:  return this.liczbaUczestnikow * this.cena;
+
+        return cena.multiply(BigDecimal.valueOf(liczbaUczestnikow)); // valueof przerabia  int na Bigdemical
+
+}
+
+  public BigDecimal obliczPrzychodNetto()
+    {
+        BigDecimal vat = BigDecimal.ONE.add(StaleAplikacji.STAWKA_VAT);
+
+        return (this.obliczPrzychodBrutto().divide(vat, 2, RoundingMode.HALF_UP));
+
+      // wczesniej  return (this.obliczPrzychodBrutto()/ (1 + StaleAplikacji.STAWKA_VAT)); //czyli dzielenie przez 1,23
+
+
+
+
+    }
+
 
 }
 
