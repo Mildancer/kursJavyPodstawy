@@ -53,17 +53,17 @@ public class Tablica1 {
 
         System.out.println("Tabli co 2gi element");
 
-        for (int i = 0; i < tablicaWypelniona.length; i = i + 2)
-        {
+        for (int i = 0; i < tablicaWypelniona.length; i = i + 2) {
             System.out.println(tablicaWypelniona[i]);
 
         }
 
+        for (int tmp : tablicaWypelniona) //tmp-temporary -- tablicaWypelniona to zbior
+        {
+            System.out.println(tmp);
 
-
-
+        }
     }
 }
-
 
 
