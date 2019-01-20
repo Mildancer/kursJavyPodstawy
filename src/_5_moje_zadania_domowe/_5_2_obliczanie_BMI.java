@@ -3,7 +3,7 @@ package _5_moje_zadania_domowe;
 import java.util.Scanner;
 
 
-public class _2_obliczanie_BMI {
+public class _5_2_obliczanie_BMI {
 
 
     public static void main(String[] args) {
